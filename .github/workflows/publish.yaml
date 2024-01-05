@@ -19,4 +19,6 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
+          git config --global user.email "admin@bmlt.app"
+          git config --global user.name "fortysevenbot"
           npm run deploy
