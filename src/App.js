@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 function App() {
   let yapServers = [
       {"name":"SEZF","url":"https://bmlt.sezf.org/zonal-yap/upgrade-advisor.php?override_service_body_config_id=43"},
-      {"name":"Archsearch","url":"https://archsearch.org/yap-4.3.0-beta1/upgrade-advisor.php"}
+      {"name":"WSZF","url":"https://bmlt.wszf.org/yap/upgrade-advisor.php"},
   ]
 
   const [yapServerData, setYapServerData] = useState([]);
