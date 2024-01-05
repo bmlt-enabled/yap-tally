@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 
 function App() {
   let yapServers = [
+      {"name":"Quebec","url":"https://yap.membres.naquebec.org/upgrade-advisor.php"},
       {"name":"SEZF","url":"https://bmlt.sezf.org/zonal-yap/upgrade-advisor.php?override_service_body_config_id=43"},
       {"name":"WSZF","url":"https://bmlt.wszf.org/yap/upgrade-advisor.php"},
   ]
