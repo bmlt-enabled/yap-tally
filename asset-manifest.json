@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/yap-tally/static/css/main.f855e6bc.css",
+    "main.js": "/yap-tally/static/js/main.07ac2af0.js",
+    "index.html": "/yap-tally/index.html",
+    "main.f855e6bc.css.map": "/yap-tally/static/css/main.f855e6bc.css.map",
+    "main.07ac2af0.js.map": "/yap-tally/static/js/main.07ac2af0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.07ac2af0.js"
+  ]
+}
