@@ -19,6 +19,10 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          git config --global user.email "admin@bmlt.app"
-          git config --global user.name "fortysevenbot"
-          npm run deploy
+          npm run build
+
+      - name: Deploy to GH Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
