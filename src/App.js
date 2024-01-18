@@ -9,7 +9,7 @@ function App() {
             {"name": "Al-Sask Region", "url": "https://bmltyap.org/AlSask/upgrade-advisor.php"},
             {"name": "Connecticut Region", "url": "http://yap.ctna.org/upgrade-advisor.php"},
             {"name": "New England Region", "url": "https://phoneline.nerna.org/yap/upgrade-advisor.php"},
-            {"name": "Quebec Regin", "url": "https://yap.membres.naquebec.org/upgrade-advisor.php"},
+            {"name": "Quebec Region", "url": "https://yap.membres.naquebec.org/upgrade-advisor.php"},
             {"name": "Show Me Region", "url": "https://missourina.org/yap/upgrade-advisor.php"},
             {"name": "Southeastern Zonal Forum", "url": "https://bmlt.sezf.org/zonal-yap/upgrade-advisor.php?override_service_body_config_id=43"},
             {"name": "Western States Zonal Forum", "url": "https://bmlt.wszf.org/yap/upgrade-advisor.php"},
