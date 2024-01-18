@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/yap-tally/static/css/main.f855e6bc.css",
-    "main.js": "/yap-tally/static/js/main.f661a280.js",
+    "main.js": "/yap-tally/static/js/main.633369a8.js",
     "index.html": "/yap-tally/index.html",
     "main.f855e6bc.css.map": "/yap-tally/static/css/main.f855e6bc.css.map",
-    "main.f661a280.js.map": "/yap-tally/static/js/main.f661a280.js.map"
+    "main.633369a8.js.map": "/yap-tally/static/js/main.633369a8.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.f661a280.js"
+    "static/js/main.633369a8.js"
   ]
 }
