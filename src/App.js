@@ -10,7 +10,7 @@ function App() {
             {"name": "Australia Region", "url": "https://na.org.au/yap/upgrade-advisor.php"},
             {"name": "Bayou Recovery Area", "url": "https://bmltyap.org/brana/upgrade-advisor.php"},
             {"name": "Connecticut Region", "url": "https://yap.ctna.org/upgrade-advisor.php"},
-            {"name": "Esperanza Area", "url": "https://yap.ctna.org/upgrade-advisor.php"},
+            {"name": "Esperanza Area", "url": "https://bmltyap.org/esperanza-yap/upgrade-advisor.php"},
             {"name": "Hill Country Area", "url": "https://hillcountryna.org/yap/upgrade-advisor.php"},
             {"name": "Minnesota Region", "url": "https://yap.naminnesota.org/upgrade-advisor.php"},
             {"name": "Mississippi Region", "url": "https://mrscna.net/yap/upgrade-advisor.php"},
