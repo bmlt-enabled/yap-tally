@@ -7,7 +7,7 @@ function App() {
     {
         return [
             {"name": "Al-Sask", "url": "https://bmltyap.org/AlSask/upgrade-advisor.php"},
-            {"name": "Connecticut", "url": "http://yap.ctna.org/"},
+            {"name": "Connecticut", "url": "http://yap.ctna.org/upgrade-advisor.php"},
             {"name": "Quebec", "url": "https://yap.membres.naquebec.org/upgrade-advisor.php"},
             {"name": "SEZF", "url": "https://bmlt.sezf.org/zonal-yap/upgrade-advisor.php?override_service_body_config_id=43"},
             {"name": "WSZF", "url": "https://bmlt.wszf.org/yap/upgrade-advisor.php"},
