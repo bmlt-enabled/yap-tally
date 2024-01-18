@@ -7,6 +7,7 @@ function App() {
     {
         return [
             {"name": "Al-Sask Region", "url": "https://bmltyap.org/AlSask/upgrade-advisor.php"},
+            {"name": "Arizona Region", "url": "https://arizona-na.org/yap/live/upgrade-advisor.php"},
             {"name": "Australia Region", "url": "https://na.org.au/yap/upgrade-advisor.php"},
             {"name": "Bayou Recovery Area", "url": "https://bmltyap.org/brana/upgrade-advisor.php"},
             {"name": "Connecticut Region", "url": "https://yap.ctna.org/upgrade-advisor.php"},
