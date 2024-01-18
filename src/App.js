@@ -12,7 +12,7 @@ function App() {
             {"name": "Quebec Region", "url": "https://yap.membres.naquebec.org/upgrade-advisor.php"},
             {"name": "Show Me Region", "url": "https://missourina.org/yap/upgrade-advisor.php"},
             {"name": "Southeastern Zonal Forum", "url": "https://bmlt.sezf.org/zonal-yap/upgrade-advisor.php?override_service_body_config_id=43"},
-            {"name": "Volunteer Region": "url", "https://natennessee.org/yap/upgrade-advisor.php"},
+            {"name": "Volunteer Region", "url": "https://natennessee.org/yap/upgrade-advisor.php"},
             {"name": "Western States Zonal Forum", "url": "https://bmlt.wszf.org/yap/upgrade-advisor.php"},
         ]
     }, []);
