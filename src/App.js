@@ -53,7 +53,7 @@ function App() {
 
   return (
       <div>
-          <h2>Yap Tally</h2>
+          <h2>Yap Tally ({yapServerData.length})</h2>
           <table border={1}>
               <thead>
               <tr>
