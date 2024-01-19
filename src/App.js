@@ -13,6 +13,7 @@ function App() {
             {"name": "Central Atlantic Region", "url": "Https://yap.centralatlanticregionofna.org/upgrade-advisor.php"},
             {"name": "Connecticut Region", "url": "https://yap.ctna.org/upgrade-advisor.php"},
             {"name": "Esperanza Area", "url": "https://bmltyap.org/esperanza-yap/upgrade-advisor.php"},
+            {"name": "FreeState Region Area", "url": "https://freestatena.org/yap-4.2.8/upgrade-advisor.php"},
             {"name": "Hill Country Area", "url": "https://hillcountryna.org/yap/upgrade-advisor.php"},
             {"name": "Louisiana Region", "url": "https://dontuse.org/upgrade-advisor.php"},
             {"name": "Minnesota Region", "url": "https://yap.naminnesota.org/upgrade-advisor.php"},
