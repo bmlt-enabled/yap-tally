@@ -8,6 +8,7 @@ function App() {
         return [
             {"name": "Al-Sask Region", "url": "https://bmltyap.org/AlSask/upgrade-advisor.php"},
             {"name": "Arizona Region", "url": "https://arizona-na.org/yap/live/upgrade-advisor.php"},
+            {"name": "Central Atlantic Region", "url": "Https://yap.centralatlanticregionofna.org/upgrade-advisor.php"},
             {"name": "Australia Region", "url": "https://na.org.au/yap/upgrade-advisor.php"},
             {"name": "Bayou Recovery Area", "url": "https://bmltyap.org/brana/upgrade-advisor.php"},
             {"name": "Connecticut Region", "url": "https://yap.ctna.org/upgrade-advisor.php"},
@@ -15,7 +16,9 @@ function App() {
             {"name": "Hill Country Area", "url": "https://hillcountryna.org/yap/upgrade-advisor.php"},
             {"name": "Minnesota Region", "url": "https://yap.naminnesota.org/upgrade-advisor.php"},
             {"name": "Mississippi Region", "url": "https://mrscna.net/yap/upgrade-advisor.php"},
+            {"name": "Mountaineer Region", "url": "https://yap.yapmrscna.org/upgrade-advisor.php"},
             {"name": "New England Region", "url": "https://phoneline.nerna.org/yap/upgrade-advisor.php"},
+            {"name": "Northern New York Region", "url": "https://yap.nny-na.org/upgrade-advisor.php"},
             {"name": "Quebec Region", "url": "https://yap.membres.naquebec.org/upgrade-advisor.php"},
             {"name": "Region 51", "url": "https://phoneline.region51na.org/upgrade-advisor.php"},
             {"name": "San Francisco Area", "url": "https://phoneline.sfna.org/upgrade-advisor.php"},
