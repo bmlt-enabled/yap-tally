@@ -3,8 +3,7 @@ import {useEffect, useMemo, useState} from "react";
 
 
 function App() {
-  const yapServers = useMemo(() =>
-    {
+    const yapServers = useMemo(() => {
         return [
             {"name": "Al-Sask Region", "url": "https://bmltyap.org/AlSask/upgrade-advisor.php"},
             {"name": "Arizona Region", "url": "https://arizona-na.org/yap/live/upgrade-advisor.php"},
@@ -34,49 +33,65 @@ function App() {
         ]
     }, []);
 
-  const [yapServerData, setYapServerData] = useState([]);
+    const [yapServerData, setYapServerData] = useState([]);
+    const [sortConfig, setSortConfig] = useState({key: null, direction: 'ascending'});
 
-  useEffect(() => {
-    const fetchData = async () => {
-        const responses = await Promise.all(yapServers.map(server => fetch(`https://corsproxy.io/?${encodeURIComponent(server.url)} `)));
-        const data = await Promise.all(responses.map(response => response.json()));
+    useEffect(() => {
+        const fetchData = async () => {
+            const responses = await Promise.all(yapServers.map(server => fetch(`https://corsproxy.io/?${encodeURIComponent(server.url)}`)));
+            const data = await Promise.all(responses.map(response => response.json()));
+            const combinedData = data.map((responseData, index) => ({
+                name: yapServers[index].name,
+                data: responseData,
+            }));
+            setYapServerData(combinedData);
+        };
+        fetchData();
+    }, [yapServers]);
 
-        const combinedData = data.map((responseData, index) => ({
-            name: yapServers[index].name,
-            data: [responseData],
-        }));
+    const sortedYapServerData = useMemo(() => {
+        return [...yapServerData].sort((a, b) => {
+            if (!sortConfig.key) return 0;
+            let compareResult = 0;
+            if (sortConfig.key === 'version') {
+                compareResult = a.data.version.split('.').map(Number).reduce((acc, val, i) => {
+                    return acc || val - (b.data.version.split('.')[i] || 0);
+                }, 0);
+            } else {
+                compareResult = a[sortConfig.key].localeCompare(b[sortConfig.key], 'en', {sensitivity: 'base'});
+            }
+            return sortConfig.direction === 'ascending' ? compareResult : -compareResult;
+        });
+    }, [yapServerData, sortConfig]);
 
-        setYapServerData(combinedData)
-    }
+    const requestSort = (key) => {
+        setSortConfig({
+            key,
+            direction: sortConfig.key === key && sortConfig.direction === 'ascending' ? 'descending' : 'ascending'
+        });
+    };
 
-    fetchData()
-  }, [yapServers])
-
-  return (
-      <div>
-          <h2>Yap Tally ({yapServerData.length})</h2>
-          <table border={1}>
-              <thead>
-              <tr>
-                  <th>Server</th>
-                  <th>Version</th>
-                  {/* Add more table headers if needed */}
-              </tr>
-              </thead>
-              <tbody>
-              {yapServerData.map(({ name, data }) => (
-                  data.map((serverData) => (
-                      <tr key={name}>
-                          <td>{name}</td>
-                          <td>{serverData.version}</td>
-                          {/* Add more table cells if needed */}
-                      </tr>
-                  ))
-              ))}
-              </tbody>
-          </table>
-      </div>
-  );
+    return (
+        <div>
+            <h2>Yap Tally ({yapServerData.length})</h2>
+            <table border="1">
+                <thead>
+                <tr>
+                    <th onClick={() => requestSort('name')}>Server</th>
+                    <th onClick={() => requestSort('version')}>Version</th>
+                </tr>
+                </thead>
+                <tbody>
+                {sortedYapServerData.map(({ name, data }, index) => (
+                    <tr key={`${name}-${index}`}>
+                        <td>{name}</td>
+                        <td>{data.version}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+        </div>
+    );
 }
 
 export default App;
