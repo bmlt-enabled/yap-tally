@@ -66,12 +66,12 @@ function App() {
                     return await fetch(`https://corsproxy.io/?${encodeURIComponent(server.url)}`)
                 }
             } catch (error) {
-                return { status: 'error', error };
+                return { status: 'error', value: {version: "error"}, error };
             }
         }));
         const data = await Promise.allSettled(responses.map(response => {
             if (response.status === "fulfilled" && response.value !== null) {
-                return response.value
+                return response.value.constructor.name === "Response" ? response.value.json() : response.value
             } else {
                 return ""
             }
