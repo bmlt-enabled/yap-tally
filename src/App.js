@@ -96,7 +96,6 @@ function App() {
               <tr>
                   <th>Server</th>
                   <th>Version</th>
-                  {/* Add more table headers if needed */}
               </tr>
               </thead>
               <tbody>
@@ -104,7 +103,7 @@ function App() {
                   data.map((serverData) => (
                       <tr key={name}>
                           <td>{name}</td>
-                          <td>{serverData.value !== null && serverData.value.version !== null ? serverData.value.version : ""}</td>
+                          <td>{serverData.value !== undefined && serverData.value.version !== undefined ? serverData.value.version : ""}</td>
                       </tr>
                   ))
               ))}
