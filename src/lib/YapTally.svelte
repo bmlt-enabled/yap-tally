@@ -56,7 +56,7 @@
 					const url = server.jsonp ? `${server.url}?format=jsonp` : `https://corsproxy.io/?${encodeURIComponent(server.url)}`;
 					const response = server.jsonp ? await fetchJsonp(url) : await fetch(url);
 					return response.json();
-				} catch (error) {
+				} catch {
 					return { version: 'error' };
 				}
 			})
