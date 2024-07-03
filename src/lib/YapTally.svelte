@@ -36,7 +36,6 @@
 		{ name: 'New England Region', url: 'https://phoneline.nerna.org/yap/upgrade-advisor.php' },
 		{ name: 'Northern New York Region', url: 'https://yap.nny-na.org/upgrade-advisor.php', jsonp: true },
 		{ name: 'Plains States Zonal Forum', url: 'https://pszfna.org/yap/upgrade-advisor.php' },
-		{ name: 'Quebec Region', url: 'https://yap.membres.naquebec.org/upgrade-advisor.php' },
 		{ name: 'Region 51', url: 'https://phoneline.region51na.org/upgrade-advisor.php', jsonp: true },
 		{ name: 'San Francisco Area', url: 'https://phoneline.sfna.org/upgrade-advisor.php', jsonp: true },
 		{ name: 'Show Me Region', url: 'https://missourina.org/yap/upgrade-advisor.php' },
