@@ -3,6 +3,7 @@
 	import { writable } from 'svelte/store';
 	import fetchJsonp from 'fetch-jsonp';
 	import Servers from './data/servers.json';
+	import Spinner from './Spinner.svelte';
 
 	interface YapServer {
 		name: string;
@@ -23,26 +24,31 @@
 
 	const yapServerData = writable<YapServerData[]>([]);
 	let sortDirection = writable(1);
+	let isLoading = true;
 
 	onMount(async () => {
-		const responses = await Promise.allSettled(
-			yapServers.map(async (server) => {
-				try {
-					const url = server.jsonp ? `${server.url}?format=jsonp` : `https://corsproxy.aws.bmlt.app/?url=${encodeURIComponent(server.url)}`;
-					const response = server.jsonp ? await fetchJsonp(url) : await fetch(url);
-					return response.json();
-				} catch {
-					return { version: 'error' };
-				}
-			})
-		);
+		try {
+			const responses = await Promise.allSettled(
+				yapServers.map(async (server) => {
+					try {
+						const url = server.jsonp ? `${server.url}?format=jsonp` : `https://corsproxy.aws.bmlt.app/?url=${encodeURIComponent(server.url)}`;
+						const response = server.jsonp ? await fetchJsonp(url) : await fetch(url);
+						return response.json();
+					} catch {
+						return { version: 'error' };
+					}
+				})
+			);
 
-		const data = responses.map((response, index) => ({
-			name: yapServers[index].name,
-			data: response.status === 'fulfilled' ? [response.value] : [{ version: 'error' }]
-		}));
+			const data = responses.map((response, index) => ({
+				name: yapServers[index].name,
+				data: response.status === 'fulfilled' ? [response.value] : [{ version: 'error' }]
+			}));
 
-		yapServerData.set(data);
+			yapServerData.set(data);
+		} finally {
+			isLoading = false;
+		}
 	});
 
 	function compareVersions(versionA: string, versionB: string): number {
@@ -76,22 +82,26 @@
 
 <div id="main">
 	<h2>Yap Tally</h2>
-	<table>
-		<thead>
-			<tr>
-				<th on:click={() => sortByField('name')}>Server</th>
-				<th on:click={() => sortByField('version')}>Version</th>
-			</tr>
-		</thead>
-		<tbody>
-			{#each $yapServerData as { name, data }}
-				{#each data as serverData}
-					<tr>
-						<td>{name}</td>
-						<td>{serverData.version !== undefined ? serverData.version : 'Error'}</td>
-					</tr>
+	{#if isLoading}
+		<Spinner />
+	{:else}
+		<table>
+			<thead>
+				<tr>
+					<th on:click={() => sortByField('name')}>Server</th>
+					<th on:click={() => sortByField('version')}>Version</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each $yapServerData as { name, data }}
+					{#each data as serverData}
+						<tr>
+							<td>{name}</td>
+							<td>{serverData.version !== undefined ? serverData.version : 'Error'}</td>
+						</tr>
+					{/each}
 				{/each}
-			{/each}
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+	{/if}
 </div>
