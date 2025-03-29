@@ -35,5 +35,14 @@ export default [
 		rules: {
 			'@typescript-eslint/no-explicit-any': 'off'
 		}
+	},
+	{
+		settings: {
+			svelte: {
+				// Specifies an array of rules to ignore reports within the template.
+				// For example, use this to disable rules in the template that may produce unavoidable false positives.
+				ignoreWarnings: ['svelte/require-each-key']
+			}
+		}
 	}
 ];
