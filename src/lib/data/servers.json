@@ -10,6 +10,7 @@
 	{ "name": "Connecticut Region", "url": "https://yap.ctna.org/upgrade-advisor.php" },
 	{ "name": "Esperanza Area", "url": "https://bmltyap.org/esperanza-yap/upgrade-advisor.php", "jsonp": true },
 	{ "name": "FreeState Region Area", "url": "https://freestatena.org/yap-4.2.8/upgrade-advisor.php" },
+	{ "name": "Guam Region", "url": "https://guamna.org/yap/upgrade-advisor.php" },
 	{ "name": "Hill Country Area", "url": "https://hillcountryna.org/yap/upgrade-advisor.php" },
 	{ "name": "Indiana Region", "url": "https://yap.naindiana.org/upgrade-advisor.php", "jsonp": true },
 	{ "name": "Kentucky", "url": "https://bmlt.bmltky.online/yap/upgrade-advisor.php" },
